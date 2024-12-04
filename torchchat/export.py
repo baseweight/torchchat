@@ -389,8 +389,8 @@ def main(args):
                 builder_args.max_seq_length = 300
             elif output_pte_path is not None:
                 # The value of 128 was chosen to match the ExecuTorch Llama example setup.
-                print("Setting max_seq_length to 128 for ExecuTorch export.")
-                builder_args.max_seq_length = 128
+                print("Setting max_seq_length to 4096, because 128 is too small for real world llama use")
+                builder_args.max_seq_length = 4096
 
         model = _initialize_model(
             builder_args,
